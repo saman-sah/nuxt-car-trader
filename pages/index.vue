@@ -1,12 +1,11 @@
-<script>
+<script setup>
+useHead({
+    title: 'Car Trader'
+})
 </script>
 
 <template>
     <div>
-        <!-- NAVBAR -->
-        <Nav />
-        <!-- NAVBAR -->
-
         <!-- HOME HERO -->
         <CarHero />
         <!-- HOME HERO -->

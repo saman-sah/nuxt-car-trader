@@ -1,8 +1,27 @@
+<script setup>
+    const route= useRoute();
+    if(route.params.make ) {
+        console.log(route.params.make );
+    }
+    useHead({
+        title: toTitleCase(route.params.name)
+    })
+    definePageMeta({
+        layout: 'custom'
+    })
+
+    function toTitleCase(str) {
+        return str.replace(
+            /\w\S*/g,
+            function (txt) {
+                return txt.charAt(0).toUpperCase()
+            }
+        )
+    }
+</script>
 <template>
     <!-- CAR DETAIL PAGE -->
-    <div
-    class="mx-auto mt-4 max-w-7xl space-y-4 px-4 xs:px-8 sm:px-10 lg:px-16 pb-16 w-3/5"
-    >
+    
         <div>
             <!-- CAR HERO -->
             <DetailHero />
@@ -21,6 +40,6 @@
         <DetailContact />
         <!-- CAR CONTACT -->
 
-    </div>
+
     <!-- CAR DETAIL PAGE   -->
 </template>
